@@ -8,8 +8,6 @@ namespace GC_Lab3
         {
             string keepPlaying = "";
             bool continueGame = true;
-            bool legitEntry = false;
-            string input = "";
             
             Console.Write("Hello and welcome!  Please enter your name? "); //prompts for user name
             string name = Console.ReadLine();
@@ -21,28 +19,6 @@ namespace GC_Lab3
                 Console.Write("Please enter an integer between 1 and 100: ");
                 int num = int.Parse(Console.ReadLine());
                 
-                
-                //input = Console.ReadLine();  //code attempting to get alpha and numeric validation working - unsuccessful
-                //int num = 0;
-
-                //while (legitEntry == false)
-                //{
-
-                //    while (!int.TryParse(input, out num)) //validation for numeric input
-                //    {
-                //        Console.Write("Please enter an integer value between 1 and 100: ");
-                //        input = Console.ReadLine();
-                //        //legitEntry = false;
-                //    }
-                //    while (num <= 1 || num >= 100) //validation for correct range entry
-                //    {
-                //        Console.Write(name + ", your number is invalid.  Please enter an integer between 1 and 100: ");
-                //        num = int.Parse(Console.ReadLine());
-                //        //legitEntry = false;
-                //    }
-                //    legitEntry = true;
-                //}
-
                 while (num <= 1 || num >= 100) //validation for correct integer entry but breaks if alpha characters are entered
                 {
                     Console.Write(name + ", your number is invalid.  Please enter an integer between 1 and 100: ");
@@ -54,7 +30,7 @@ namespace GC_Lab3
                 {
                     Console.WriteLine(num + " is odd and greater than 60.");
                 }
-                else if (num % 2 != 0 && num <= 60) //redundant check based on output from if statement above
+                else if (num % 2 != 0 && num <= 60)
                 {
                     Console.WriteLine(num + " is odd and less than or equal to 60.");
                 }
